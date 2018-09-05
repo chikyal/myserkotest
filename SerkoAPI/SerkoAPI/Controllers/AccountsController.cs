@@ -102,7 +102,7 @@ namespace SerkoAPI.Controllers
                 resp.status.success = false;
                 resp.status.detail = new Detail { errormessage = "problem with strating or ending tags " };
                 resp.response.Vendor = Vendor;
-                throw;
+               
             }
             return Ok(resp);
         }
