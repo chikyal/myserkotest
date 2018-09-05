@@ -61,7 +61,7 @@ namespace SerkoAPI.Controllers
                         {
                             Vendor.Expense.CostCentre = item1.Element("cost_centre").Value;
                         }
-                       if (string.IsNullOrEmpty(Vendor.Expense.CostCentre)) { Vendor.Expense.CostCentre = "UNKNOWN"; }
+                        if (string.IsNullOrEmpty(Vendor.Expense.CostCentre)) { Vendor.Expense.CostCentre = "UNKNOWN"; }
                         if (item1.Element("payment_method") != null)
                         {
                             Vendor.Expense.PaymentMethod = item1.Element("payment_method").Value;
@@ -70,8 +70,8 @@ namespace SerkoAPI.Controllers
                         {
                             total = Convert.ToDouble(item1.Element("total").Value);
                             Vendor.Expense.Total = total;
-                            gst = total / 1.1; //10% gst
-                            amount = total - gst;
+                            amount = total / 1.1; //10% gst
+                            gst = total - amount;
 
                             Vendor.Expense.Amount = amount;
                             Vendor.Expense.GST = gst;
