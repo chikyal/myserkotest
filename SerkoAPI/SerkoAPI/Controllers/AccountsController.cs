@@ -61,10 +61,7 @@ namespace SerkoAPI.Controllers
                         {
                             Vendor.Expense.CostCentre = item1.Element("cost_centre").Value;
                         }
-                        else
-                        {
-                            Vendor.Expense.CostCentre = "UNKNOWN";
-                        }
+                       if (string.IsNullOrEmpty(Vendor.Expense.CostCentre)) { Vendor.Expense.CostCentre = "UNKNOWN"; }
                         if (item1.Element("payment_method") != null)
                         {
                             Vendor.Expense.PaymentMethod = item1.Element("payment_method").Value;
